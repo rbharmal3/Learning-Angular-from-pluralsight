@@ -1,4 +1,5 @@
 import { Component , Input, Output, EventEmitter} from '@angular/core';
+import { IEvent } from './shared/event.model';
 
 
 @Component({
@@ -38,7 +39,7 @@ import { Component , Input, Output, EventEmitter} from '@angular/core';
 })
 export class EventThumbnailComponent{
   // exports property to parent class
-  @Input() event: any;
+  @Input() event: IEvent;
 
   getStartClass(){
     if(this.event && this.event.time === '8:00 am')

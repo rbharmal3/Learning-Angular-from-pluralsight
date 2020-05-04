@@ -7,16 +7,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 var core_1 = require("@angular/core");
-var NavBarComponent = /** @class */ (function () {
-    function NavBarComponent() {
+var common_1 = require("@angular/common");
+var router_1 = require("@angular/router");
+var user_routes_1 = require("./user.routes");
+var profile_component_1 = require("./profile.component");
+var UserModule = /** @class */ (function () {
+    function UserModule() {
     }
-    NavBarComponent = __decorate([
-        core_1.Component({
-            selector: 'navbar',
-            templateUrl: './navbar.component.html',
-            styles: ["\n     .nav .navbar-nav{font-size:15px}\n     #searchForm{margin-right:100px}\n     @media (max-width:1200px){ #searchForm{display:none}}\n     li > a.active{color:#F97924}\n  \n  "]
+    UserModule = __decorate([
+        core_1.NgModule({
+            declarations: [
+                profile_component_1.ProfileComponent
+            ],
+            imports: [
+                common_1.CommonModule,
+                router_1.RouterModule.forChild(user_routes_1.userRoutes)
+            ]
         })
-    ], NavBarComponent);
-    return NavBarComponent;
+    ], UserModule);
+    return UserModule;
 }());
-exports.NavBarComponent = NavBarComponent;
+exports.UserModule = UserModule;
